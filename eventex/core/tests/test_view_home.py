@@ -1,4 +1,3 @@
-from django.http import response
 from django.test import TestCase
 from django.shortcuts import resolve_url as r
 
@@ -39,3 +38,8 @@ class HomeTest(TestCase):
     def test_speakers_link(self):
         expected = 'href="{}#speakers"'.format(r('home'))
         self.assertContains(self.response, expected)
+
+    def test_talks_link(self):
+        expected = 'href="{}"'.format(r('talk_list'))
+        self.assertContains(self.response, expected)
+        
