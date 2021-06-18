@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from eventex.core.models import Speaker, Talk
+from eventex.core.models import Course, Speaker, Talk
 
 
 def home(request):

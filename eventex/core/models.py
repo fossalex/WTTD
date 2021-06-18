@@ -53,8 +53,19 @@ class Talk(models.Model):
     objects = PeriodManager()
 
     class Meta:
+        ordering = ['start']
         verbose_name = 'palestra'
         verbose_name_plural = 'palestras'
     
     def __str__(self):
         return self.title
+    
+
+class Course(Talk):
+    slots = models.IntegerField()
+
+    objects = PeriodManager()
+
+    class Meta:
+        verbose_name = 'curso'
+        verbose_name_plural = 'cursos'
